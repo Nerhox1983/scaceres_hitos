@@ -36,4 +36,32 @@ function getTipos()
     });
 }
 
+function insertTipo()
+{
+    var conn = new sql.ConnectionPool(dbConfig);
+    var req = new sql.Request(conn);
+    
+    conn.connect (function (err) 
+    {
+        if (err) 
+        {
+            console.log(err);
+            return;     
+        }
+        req.query("INSERT INTO [dbo].[tipos] ([s_descri]) VALUES ('TIPO C')", function(err, recordset) 
+        {
+            if (err) 
+            {
+                console.log(err);    
+            }
+            else 
+            {
+                console.log(recordset)
+            }
+            conn.close();
+        });
+    });
+}
+
+insertTipo();
 getTipos();
