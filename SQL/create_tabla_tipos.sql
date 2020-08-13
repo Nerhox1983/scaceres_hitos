@@ -7,7 +7,7 @@ GO
 
 CREATE TABLE tipos 
 (
-	i_tipid INT 
+	i_tipid INT IDENTITY(1,1)
 	, s_descri VARCHAR (100) NOT NULL
 	CONSTRAINT [PK_tipo] PRIMARY KEY CLUSTERED  
 	(  
