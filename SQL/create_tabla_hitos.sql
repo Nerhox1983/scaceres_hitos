@@ -12,7 +12,7 @@ CREATE TABLE hitos
 	, f_fecing DATETIME  NOT NULL
 	, i_tipo INT  NOT NULL
 	, s_descri VARCHAR (100) NOT NULL
-	, f_cumpli DATETIME  NOT NULL
+	, f_feccum DATETIME  NOT NULL
 	, s_cumpli VARCHAR (1) NULL
 	, s_obscum VARCHAR (100) NULL
 	, FOREIGN KEY (i_tipo) REFERENCES tipos(i_tipid)
