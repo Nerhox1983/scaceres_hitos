@@ -6,7 +6,7 @@ router.get('/ApiProfileGet', async (req, res) => {
 try {  
 const pool = await poolPromise  
 const result = await pool.request()  
-.query('select * from tblProfile',function(err, profileset){  
+.query('select * from tipos',function(err, profileset){  
 if (err)  
 {  
 console.log(err)  

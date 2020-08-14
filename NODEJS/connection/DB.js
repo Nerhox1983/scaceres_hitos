@@ -1,11 +1,13 @@
 // DB.js config for your database  
 const sql = require('mssql')  
 const config = 
-{  
-    user: 'abcd',  
-    password: 'abcd',  
-    server: "localhost",  
-    database: "profile"  
+{
+    server: 'localhost\\MSSQLSERVER2017'
+    , database: 'SJCC'
+    , user: 'sa'
+    , password: 'Intergrupo2017.*'
+    , port: 52684
+  
 }  
 const poolPromise = new sql.ConnectionPool(config)  
 .connect()  
