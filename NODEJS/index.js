@@ -8,7 +8,7 @@ app.use(function (req, res, next)
     res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');  
     next();  
 });  
-app.use(bodyParser.urlencoded(extended, true ));
+app.use(bodyParser.urlencoded({extended:true}));
 const ProfileData = require('./controller/profile')  
 app.use('/', ProfileData)  
 app.listen(5000, function () 
