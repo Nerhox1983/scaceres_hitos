@@ -23,4 +23,25 @@ res.send(err.message)
 })
 
 /**/
+router.post('/ApiProfilePost', async (req, res) => 
+{  
+    try 
+    {  
+    const pool = await poolPromise  
+    const result = await pool.request()  
+    .input("s_nombreProyecto", sql.VarChar(100), req.body.s_nombreProyecto)  
+    .input("f_fechaIngreso", sql.DateTime, req.body.f_fechaIngreso)  
+    .input("i_tipo", sql.Int, req.body.i_tipo)  
+    .input("s_descripcion", sql.VarChar(100), req.body.s_descripcion) 
+    .input("f_fechaCumplimiento", sql.DateTime, req.body.f_fechaCumplimiento)
+    .input("s_cumplio", sql.VarChar(1), req.body.s_cumplio)
+    .input("s_observacionesCumplimiento", sql.VarChar(1), req.body.s_observacionesCumplimiento)  
+    .execute("insertarHito").then(function (recordSet) {  
+    res.status(200).json({ status: "Success" })  
+    })  
+    } catch (err) {  
+    res.status(400).json({ message: "invalid" })  
+    res.send(err.message)  
+    }  
+    })  
 module.exports = router;
