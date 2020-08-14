@@ -75,7 +75,7 @@ function updateTipo()
             console.log(err);
             return;     
         }
-        req.query("UPDATE [dbo].[tipos] SET [s_descri] = 'NUEVO TIPO B' WHERE i_tipid=2", function(err, recordset) 
+        req.query("UPDATE [dbo].[tipos] SET [s_descri] = 'NUEVO TIPO D' WHERE i_tipid=4", function(err, recordset) 
         {
             if (err) 
             {
@@ -89,7 +89,5 @@ function updateTipo()
         });
     });
 }
-
-/*insertTipo();*/
-/*updateTipo();*/
+updateTipo();
 getTipos();
