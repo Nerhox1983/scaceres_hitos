@@ -63,5 +63,33 @@ function insertTipo()
     });
 }
 
-insertTipo();
+function updateTipo()
+{
+    var conn = new sql.ConnectionPool(dbConfig);
+    var req = new sql.Request(conn);
+    
+    conn.connect (function (err) 
+    {
+        if (err) 
+        {
+            console.log(err);
+            return;     
+        }
+        req.query("UPDATE [dbo].[tipos] SET [s_descri] = 'NUEVO TIPO B' WHERE i_tipid=2", function(err, recordset) 
+        {
+            if (err) 
+            {
+                console.log(err);    
+            }
+            else 
+            {
+                console.log(recordset)
+            }
+            conn.close();
+        });
+    });
+}
+
+/*insertTipo();*/
+/*updateTipo();*/
 getTipos();
