@@ -9,9 +9,9 @@ app.use(function (req, res, next)
     next();  
 });  
 app.use(bodyParser.urlencoded({extended:true}));
-/*const ProfileData = require('./controller/profile')  
+const ProfileData = require('./controller/profile')  
 app.use('/', ProfileData)  
 app.listen(5000, function () 
 {  
     console.log('Server is running..');  
-});*/
+});
