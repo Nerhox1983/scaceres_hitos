@@ -20,4 +20,7 @@ res.json(send_data);
 res.status(500)  
 res.send(err.message)  
 }  
-}) 
+})
+
+/**/
+module.exports = router;
