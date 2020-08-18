@@ -9,4 +9,7 @@ import {HitoService} from './services/hito.service';
 export class AppComponent 
 {
   title = 'angular-hitos';
+  constructor (private HitoService: HitoService) 
+  {    
+  }
 }
