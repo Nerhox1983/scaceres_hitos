@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-hitos"
+    }
+  },
+  "defaultProject": "angular-hitos",
+  "cli": {
+    "analytics": false
+  }
 }
