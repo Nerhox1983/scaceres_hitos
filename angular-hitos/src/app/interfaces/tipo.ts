@@ -1,4 +1,4 @@
-export interface Hito 
+export interface Tipo
 {    
     id:	Number;    
     descripcion: string;    
