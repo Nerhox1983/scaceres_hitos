@@ -79,4 +79,23 @@ router.post('/ApiProfilePost', async (req, res) =>
             res.send(err.message)  
         }  
     })
+
+    router.delete('/ApiDeleteHito', async (req, res) => 
+    {  
+        try 
+        {  
+            const pool = await poolPromise  
+            const result = await pool.request()  
+            .input("i_hitoId", sql.int, req.body.i_hitoId)  
+            .execute("eliminarHito").then(function (err, recordSet) 
+            {  
+                res.status(200).json({ status: "Success" })  
+            })  
+        } 
+        catch (err) 
+        {  
+            res.status(500)  
+            res.send(err.message)  
+        }  
+    })
 module.exports = router;
