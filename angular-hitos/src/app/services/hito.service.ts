@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Hito } from './../interfaces/Hito';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HitoService 
 {
-  constructor() 
+  constructor(private http: HttpClient)
   {
-    private http: HttpClient
-  }
+
+  }  
 }
