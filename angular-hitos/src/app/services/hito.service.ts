@@ -10,5 +10,10 @@ export class HitoService
   constructor(private http: HttpClient)
   {
 
+  }
+  getTodosHitos()
+  {    
+    const path = 'http://localhost:5000/ApiProfileGet';
+    return this.http.get<Hito[]>(path);
   }  
 }
