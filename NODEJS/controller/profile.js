@@ -86,8 +86,8 @@ router.post('/ApiProfilePost', async (req, res) =>
         {  
             const pool = await poolPromise  
             const result = await pool.request()  
-            .input("i_hitoId", sql.int, req.body.i_hitoId)  
-            .execute("eliminarHito").then(function (err, recordSet) 
+            .input("i_hitoId", sql.VarChar(100), req.body.i_hitoId)  
+            .execute("eliminarHito").then(function (err, recordSet)            
             {  
                 res.status(200).json({ status: "Success" })  
             })  
