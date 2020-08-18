@@ -8,9 +8,13 @@ import { HttpClientModule} from '@angular/common/http';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule 
+{
+
+}
