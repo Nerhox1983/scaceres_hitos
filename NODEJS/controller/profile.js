@@ -49,23 +49,15 @@ router.post('/ApiProfilePost', async (req, res) =>
     } 
     catch (err) 
     {  
-        res.status(400).json({ message: "Fallo al insertar." })  
+        res.status(500)  
         res.send(err.message)  
     }  
     })
     
     router.post('/ApiUpdateHito', async (req, res) => 
     {  
-        try 
-        {  
-            app.use((req, res, next) => 
-            {                
-                res.header("Access-Control-Allow-Origin", "*");  
-                res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");  
-                res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');  
-                next(); 
-            })
-
+        try
+         { 
             const pool = await poolPromise  
             const result = await pool.request()  
             .input("i_hitoId", sql.VarChar(100), req.body.i_hitoId)  
@@ -83,7 +75,7 @@ router.post('/ApiProfilePost', async (req, res) =>
         } 
         catch (err) 
         {  
-            res.status(400).json({ message: "Fallo al actualizar." })  
+            res.status(500)  
             res.send(err.message)  
         }  
     })
