@@ -34,7 +34,7 @@ router.get('/ApiGetHitos', async (req, res) =>
     {  
         const pool = await poolPromise  
         const result = await pool.request()  
-        .query('select * from tipos',function(err, profileset)
+        .query('select * from hitos',function(err, profileset)
         {  
             if (err)  
             {  
