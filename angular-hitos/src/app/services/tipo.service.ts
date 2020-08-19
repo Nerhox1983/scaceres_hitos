@@ -12,7 +12,7 @@ export class TipoService
   }
   getTodosTipos()
   {    
-    const path = 'http://localhost:5000/ApiGetTipos';
+    const path = 'http://localhost:5000/ApiProfileGet';
       return this.http.get<Tipo[]>(path);
   }  
 }  

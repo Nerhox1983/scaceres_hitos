@@ -13,7 +13,7 @@ export class HitoService
   }
   getTodosHitos()
   {    
-    const path = 'http://localhost:5000/ApiProfileGet';
+    const path = 'http://localhost:5000/ApiGetHitos';
     return this.http.get<Hito[]>(path);
   }  
 }
