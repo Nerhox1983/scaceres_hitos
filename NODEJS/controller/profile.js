@@ -132,7 +132,7 @@ router.post('/ApiProfilePost', async (req, res) =>
             const pool = await poolPromise  
             const result = await pool.request()  
             .input("i_hitoId", sql.VarChar(100), req.params.i_hitoId)  
-            .execute("buscarHito", function (err, recordset)            
+            .execute("buscarHito", function (err, profileset)            
             {  
                 if (err)  
                 {  
