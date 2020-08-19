@@ -1,60 +1,19 @@
-<h2>{{hito.s_nompro | uppercase}} Details</h2>
-<div><span>id: </span>{{hito.i_hitid}}</div>
-<Table>
-  <tr>
-    <td>
-    <label>Nombre:</label>
-    </td>
-    <td>
-      <input [(ngModel)]="hito.s_nompro" placeholder="s_nompro"/>
-    </td>
-  </tr>
-  <tr>
-    <td>
-    <label>Fecha Ingreso:</label>
-    </td>
-    <td>
-      <input [(ngModel)]="hito.f_fecing" placeholder="f_fecing"/>
-    </td>
-  </tr>
-  <tr>
-    <td>
-    <label>Tipo:</label>
-    </td>
-    <td>
-      <input [(ngModel)]="hito.i_tipo" placeholder="i_tipo"/>
-    </td>
-  </tr>
-  <tr>
-    <td>
-    <label>Descripción:</label>
-    </td>
-    <td>
-      <input [(ngModel)]="hito.s_descri" placeholder="s_descri"/>
-    </td>
-  </tr>
-  <tr>
-    <td>
-    <label>Fecha Cumplimiento:</label>
-    </td>
-    <td>
-      <input [(ngModel)]="hito.f_feccum" placeholder="f_feccum"/>
-    </td>
-  </tr>
-  <tr>
-    <td>
-    <label>Cumplio:</label>
-    </td>
-    <td>
-      <input [(ngModel)]="hito.s_cumpli" placeholder="s_cumpli"/>
-    </td>
-  </tr>
-  <tr>
-    <td>
-    <label>Observaciones Cumplimiento:</label>
-    </td>
-    <td>
-      <input [(ngModel)]="hito.s_obscum" placeholder="s_obscum"/>
-    </td>
-  </tr>
-</Table>
+<h2>Lista de Hitos...</h2>
+<ul class="hitos">
+  <li *ngFor="let hito of hitos"
+    [class.selected]="hito === selectedHito"
+    (click)="onSelect(hito)">
+    <span class="badge">{{hito.i_hitid}}</span> {{hito.s_nompro}}
+  </li>
+</ul>
+
+<div *ngIf="selectedHito">
+
+  <h2>Detalles de {{selectedHito.s_nompro | uppercase}}</h2>
+  <div><span>id: </span>{{selectedHero.id}}</div>
+  <div>
+    <label>Nombre:
+      <input [(ngModel)]="selectedHito.s_nompro" placeholder="s_nompr"/>
+    </label>
+  </div>
+</div>
