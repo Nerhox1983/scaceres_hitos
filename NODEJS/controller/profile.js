@@ -55,7 +55,7 @@ router.get('/ApiGetHitos', async (req, res) =>
 })
 
 /**/
-router.post('/ApiPostHito', async (req, res) => 
+router.post('/ApiInsertHito', async (req, res) => 
 {  
     try 
     {  
@@ -80,75 +80,102 @@ router.post('/ApiPostHito', async (req, res) =>
     }  
     })
     
-    router.post('/ApiUpdateHito', async (req, res) => 
-    {  
-        try
-         { 
-            const pool = await poolPromise  
-            const result = await pool.request()  
-            .input("i_hitoId", sql.VarChar(100), req.body.i_hitoId)  
-            .input("s_nombreProyecto", sql.VarChar(100), req.body.s_nombreProyecto)  
-            .input("f_fechaIngreso", sql.DateTime, req.body.f_fechaIngreso)  
-            .input("i_tipo", sql.Int, req.body.i_tipo)  
-            .input("s_descripcion", sql.VarChar(100), req.body.s_descripcion) 
-            .input("f_fechaCumplimiento", sql.DateTime, req.body.f_fechaCumplimiento)
-            .input("s_cumplio", sql.VarChar(1), req.body.s_cumplio)
-            .input("s_observacionesCumplimiento", sql.VarChar(100), req.body.s_observacionesCumplimiento)  
-            .execute("actualizarHito").then(function (recordSet) 
-            {  
-                res.status(200).json({ status: "Success" })  
-            })  
-        } 
-        catch (err) 
+router.post('/ApiUpdateHito', async (req, res) => 
+{  
+    try
+        { 
+        const pool = await poolPromise  
+        const result = await pool.request()  
+        .input("i_hitoId", sql.VarChar(100), req.body.i_hitoId)  
+        .input("s_nombreProyecto", sql.VarChar(100), req.body.s_nombreProyecto)  
+        .input("f_fechaIngreso", sql.DateTime, req.body.f_fechaIngreso)  
+        .input("i_tipo", sql.Int, req.body.i_tipo)  
+        .input("s_descripcion", sql.VarChar(100), req.body.s_descripcion) 
+        .input("f_fechaCumplimiento", sql.DateTime, req.body.f_fechaCumplimiento)
+        .input("s_cumplio", sql.VarChar(1), req.body.s_cumplio)
+        .input("s_observacionesCumplimiento", sql.VarChar(100), req.body.s_observacionesCumplimiento)  
+        .execute("actualizarHito").then(function (recordSet) 
         {  
-            res.status(500)  
-            res.send(err.message)  
-        }  
-    })
+            res.status(200).json({ status: "Success" })  
+        })  
+    } 
+    catch (err) 
+    {  
+        res.status(500)  
+        res.send(err.message)  
+    }  
+})
 
-    router.delete('/ApiDeleteHito', async (req, res) => 
+router.delete('/ApiDeleteHito', async (req, res) => 
+{  
+    try 
     {  
-        try 
+        const pool = await poolPromise  
+        const result = await pool.request()  
+        .input("i_hitoId", sql.VarChar(100), req.body.i_hitoId)  
+        .execute("eliminarHito").then(function (err, recordSet)            
         {  
-            const pool = await poolPromise  
-            const result = await pool.request()  
-            .input("i_hitoId", sql.VarChar(100), req.body.i_hitoId)  
-            .execute("eliminarHito").then(function (err, recordSet)            
-            {  
-                res.status(200).json({ status: "Success" })  
-            })  
-        } 
-        catch (err) 
-        {  
-            res.status(500)  
-            res.send(err.message)  
-        }  
-    })
+            res.status(200).json({ status: "Success" })  
+        })  
+    } 
+    catch (err) 
+    {  
+        res.status(500)  
+        res.send(err.message)  
+    }  
+})
 
-    router.get('/ApiGetHito/:i_hitoId', async (req, res) => 
+router.get('/ApiGetHito/:i_hitoId', async (req, res) => 
+{  
+    try 
     {  
-        try 
+        const pool = await poolPromise  
+        const result = await pool.request()  
+        .input("i_hitoId", sql.VarChar(100), req.params.i_hitoId)  
+        .execute("buscarHito", function (err, profileset)            
         {  
-            const pool = await poolPromise  
-            const result = await pool.request()  
-            .input("i_hitoId", sql.VarChar(100), req.params.i_hitoId)  
-            .execute("buscarHito", function (err, profileset)            
+            if (err)  
             {  
-                if (err)  
-                {  
-                    console.log(err)  
-                }  
-                else 
-                {  
-                    var send_data = profileset.recordset;  
-                    res.json(send_data);  
-                }  
-            })    
-        } 
-        catch (err) 
+                console.log(err)  
+            }  
+            else 
+            {  
+                var send_data = profileset.recordset;  
+                res.json(send_data);  
+            }  
+        })    
+    } 
+    catch (err) 
+    {  
+        res.status(500)  
+        res.send(err.message)  
+    }  
+})
+
+router.get('/ApiGetTipo/:i_tipoId', async (req, res) => 
+{  
+    try 
+    {  
+        const pool = await poolPromise  
+        const result = await pool.request()  
+        .input("i_tipoId", sql.VarChar(100), req.params.i_tipoId)  
+        .execute("buscarTipo", function (err, profileset)            
         {  
-            res.status(500)  
-            res.send(err.message)  
-        }  
-    })
+            if (err)  
+            {  
+                console.log(err)  
+            }  
+            else 
+            {  
+                var send_data = profileset.recordset;  
+                res.json(send_data);  
+            }  
+        })    
+    } 
+    catch (err) 
+    {  
+        res.status(500)  
+        res.send(err.message)  
+    }  
+})
 module.exports = router;
