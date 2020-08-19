@@ -7,6 +7,7 @@ GO
 CREATE PROCEDURE [dbo].[buscarHito]
 	@i_hitoId INT
 AS
-SELECT * FROM [dbo].[hitos]
-      WHERE i_hitid= @i_hitoId
+    SELECT * 
+    FROM [dbo].[hitos]
+    WHERE i_hitid= @i_hitoId
 GO
