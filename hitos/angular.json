@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-hitos": {
+    "hitos": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-hitos",
+            "outputPath": "dist/hitos",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-hitos:build"
+            "browserTarget": "hitos:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-hitos:build:production"
+              "browserTarget": "hitos:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-hitos:build"
+            "browserTarget": "hitos:build"
           }
         },
         "test": {
@@ -110,19 +110,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-hitos:serve"
+            "devServerTarget": "hitos:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-hitos:serve:production"
+              "devServerTarget": "hitos:serve:production"
             }
           }
         }
       }
-    }
-  },
-  "defaultProject": "angular-hitos",
-  "cli": {
-    "analytics": false
-  }
+    }},
+  "defaultProject": "hitos"
 }
