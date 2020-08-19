@@ -15,5 +15,11 @@ export class HitoService
   {    
     const path = 'http://localhost:5000/ApiGetHitos';
     return this.http.get<Hito[]>(path);
-  }  
+  }
+  
+  getUnHito(id: string)
+  {
+    const path = 'http://localhost:5000/ApiGetHito/${id}';
+    return this.http.get<Hito>(path);
+  }
 }
