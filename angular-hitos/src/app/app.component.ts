@@ -13,4 +13,13 @@ export class AppComponent
   {    
 
   }
+
+  getTodosHitos()
+  {
+    this.hitoService.getTodosHitos()
+    .subscribe(hitos =>
+    {
+      console.log(hitos);
+    });
+  }
 }
