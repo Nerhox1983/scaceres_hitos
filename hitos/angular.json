@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "hitos"
+    }
+  },
+  "defaultProject": "hitos",
+  "cli": {
+    "analytics": false
+  }
 }
