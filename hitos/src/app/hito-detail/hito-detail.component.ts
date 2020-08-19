@@ -6,7 +6,7 @@ import { Hito } from '../hito';
   templateUrl: './hito-detail.component.html',
   styleUrls: ['./hito-detail.component.css']
 })
-export class HeroDetailComponent implements OnInit 
+export class HitoDetailComponent implements OnInit 
 {
   @Input() hito: Hito;
 
