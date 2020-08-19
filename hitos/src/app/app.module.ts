@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HitosComponent } from './hitos/hitos.component';
+import { HitoDetailComponent } from './hito-detail/hito-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HitosComponent
+    HitosComponent,
+    HitoDetailComponent
   ],
   imports: 
   [
