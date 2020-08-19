@@ -2,12 +2,13 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Hito } from '../hito';
 
 @Component({
-  selector: 'app-hitp-detail',
+  selector: 'app-hito-detail',
   templateUrl: './hito-detail.component.html',
   styleUrls: ['./hito-detail.component.css']
 })
-export class HeroDetailComponent implements OnInit {
-  @Input() hero: Hito;
+export class HeroDetailComponent implements OnInit 
+{
+  @Input() hito: Hito;
 
   constructor() 
   {
