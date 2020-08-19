@@ -4,7 +4,7 @@ import { FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HitosComponent } from './hitos/hitos.component';
 import { HitoDetailComponent } from './hito-detail/hito-detail.component';
-
+import { HttpClient, HttpClientModule } from '@angular/common/http'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +14,8 @@ import { HitoDetailComponent } from './hito-detail/hito-detail.component';
   imports: 
   [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

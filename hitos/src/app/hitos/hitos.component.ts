@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hito } from '../hito';
 import { HITOS} from '../mock-hitos';
+import {HitoService} from '../hito.service'
 
 @Component({
   selector: 'app-hitos',
@@ -9,11 +10,17 @@ import { HITOS} from '../mock-hitos';
 })
 export class HitosComponent implements OnInit 
 {
-  hitos = HITOS;
+  hitos: any;
   selectedHito: Hito;
-  constructor() 
-  {
-  }
+  constructor(hitoService: HitoService) 
+  { 
+    hitoService.getTodosHitos().subscribe((data:any)=>{
+      console.log(data);
+      this.hitos = data;
+      console.log(data)
+    })
+    console.log(this.hitos);
+  }  
 
   ngOnInit() 
   {    
