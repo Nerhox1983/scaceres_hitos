@@ -1,5 +1,5 @@
 export interface Tipo
 {    
-    id:	Number;    
-    descripcion: string;    
+    i_tipid:	Number;    
+    s_descri: string;    
 }
