@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()  
 const { poolPromise } = require('../connection/db')  
 const sql = require('mssql')  
-router.get('/ApiProfileGet', async (req, res) => 
+router.get('/ApiGetTipos', async (req, res) => 
 {  
     try 
     {  
@@ -55,7 +55,7 @@ router.get('/ApiGetHitos', async (req, res) =>
 })
 
 /**/
-router.post('/ApiProfilePost', async (req, res) => 
+router.post('/ApiPostHito', async (req, res) => 
 {  
     try 
     {  
