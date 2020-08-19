@@ -1,1 +1,7 @@
-<p>hitos works!</p>
+<h2>{{hito.s_nompro | uppercase}} Details</h2>
+<div><span>id: </span>{{hito.i_hitid}}</div>
+<div>
+  <label>Nombre:
+    <input [(ngModel)]="hito.s_nompro" placeholder="s_nompro"/>
+  </label>
+</div>

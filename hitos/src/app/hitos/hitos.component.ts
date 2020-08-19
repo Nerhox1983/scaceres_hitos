@@ -11,7 +11,7 @@ export class HitosComponent implements OnInit
   hito: Hito = 
   {
     i_hitid: 1,
-    s_nompro: 'Windstorm',
+    s_nompro: 'Z8',
     f_fecing: new Date(),
     i_tipo: 11,
     s_descri: 'ABC',
