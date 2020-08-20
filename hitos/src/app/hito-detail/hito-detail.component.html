@@ -23,12 +23,7 @@
         <label>Tipo:</label>
         </td>
         <td>
-          <input [(ngModel)]="hito.i_tipo" placeholder="i_tipo"/>
-          <select [(ngModel)]="selectedTipo.i_tipid" placeholder="i_tipid">
-            <option *ngFor="let tipo of tipos" value= {{tipo.i_tipid}}>
-              {{tipo.s_descri}}
-            </option>            
-        </select>                
+          <input [(ngModel)]="hito.i_tipo" placeholder="i_tipo"/>                          
         </td>
       </tr>
       <tr>
@@ -61,6 +56,14 @@
         </td>
         <td>
           <input [(ngModel)]="hito.s_obscum" placeholder="s_obscum"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        <Button>Insertar</Button>
+        </td>
+        <td>
+        <Button>Actualizar</Button>
         </td>
       </tr>
     </Table>

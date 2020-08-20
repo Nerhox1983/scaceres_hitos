@@ -16,7 +16,9 @@ export class HitosComponent implements OnInit
   
   tipos: any;
   selectedTipo: Tipo;
-  constructor(hitoService: HitoService) 
+
+  pepeService: HitoService;
+  constructor(private hitoService: HitoService) 
   { 
     hitoService.getTodosHitos().subscribe((data:any)=>
     {
@@ -26,17 +28,24 @@ export class HitosComponent implements OnInit
     })
     console.log("hitos: " + this.hitos);
 
-    hitoService.getTodosTipos().subscribe((dataTipos:any)=>
+    /*hitoService.getTodosTipos().subscribe((data:any)=>
     {
-      console.log(dataTipos);
-      this.tipos = dataTipos;
-      console.log(dataTipos)
+      console.log(data);
+      this.tipos = data;
+      console.log(data)
     })
-    console.log("tipos: " + this.tipos);
+    console.log("tipos: " + this.tipos);*/
   }  
 
-  ngOnInit() 
-  {    
+  ngOnInit(): void  
+  {  
+    this.hitoService.getTodosTipos().subscribe((data:any)=>
+    {
+      console.log(data);
+      this.tipos = data;
+      console.log(data)
+    })
+    console.log("tipos: " + this.tipos);  
   }
 
   onSelect (hito: Hito, tipo:Tipo): void 
