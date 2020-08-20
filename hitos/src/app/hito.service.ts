@@ -31,7 +31,7 @@ export class HitoService
   
   getUnTipo()
   {    
-    const path = 'http://localhost:5000/ApiGetTipo/${i_hitid}';
+    const path = 'http://localhost:5000/ApiGetTipo/${i_tipid}';
       return this.http.get(path);
   } 
 }

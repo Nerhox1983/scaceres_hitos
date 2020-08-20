@@ -25,7 +25,7 @@
         <td>
           <input [(ngModel)]="hito.i_tipo" placeholder="i_tipo"/>
           <select [(ngModel)]="selectedTipo.i_tipid">
-            <option *ngFor="left tipo of tipos" {{tipo.i_tipid}}>
+            <option *ngFor="let tipo of tipos" value= {{tipo.i_tipid}}>
               {{tipo.s_descri}}
             </option>            
         </select>

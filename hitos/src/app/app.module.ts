@@ -9,7 +9,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     HitosComponent,
-    HitoDetailComponent
+    HitoDetailComponent    
   ],
   imports: 
   [
