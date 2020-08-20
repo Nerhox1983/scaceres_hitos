@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hito } from '../hito';
 import { HITOS} from '../mock-hitos';
-import {HitoService} from '../hito.service'
+import { HitoService } from '../hito.service'
 
 @Component({
   selector: 'app-hitos',
