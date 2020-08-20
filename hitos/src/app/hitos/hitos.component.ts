@@ -18,12 +18,21 @@ export class HitosComponent implements OnInit
   selectedTipo: Tipo;
   constructor(hitoService: HitoService) 
   { 
-    hitoService.getTodosHitos().subscribe((data:any)=>{
+    hitoService.getTodosHitos().subscribe((data:any)=>
+    {
       console.log(data);
       this.hitos = data;
       console.log(data)
     })
     console.log(this.hitos);
+
+    hitoService.getTodosTipos().subscribe((dataTipos:any)=>
+    {
+      console.log(dataTipos);
+      this.tipos = dataTipos;
+      console.log(dataTipos)
+    })
+    console.log(this.tipos);
   }  
 
   ngOnInit() 
