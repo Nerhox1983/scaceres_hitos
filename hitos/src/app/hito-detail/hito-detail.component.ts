@@ -26,7 +26,8 @@ export class HitoDetailComponent implements OnInit
 
   InsertUnHito(item)
   {
-    alert(this.hito.s_nompro);
+    /*alert(this.hito.s_nompro);*/
+    alert(this.hito.s_cumpli);
     /*const abc =
     {
       i_hitid: 1,        
@@ -38,7 +39,6 @@ export class HitoDetailComponent implements OnInit
       s_cumpli: 'N',
       s_obscum: 'prueba2020sep19'          
     };*/
-
     const nuevoHito =
     {
       i_hitid: this.hito.i_hitid,        

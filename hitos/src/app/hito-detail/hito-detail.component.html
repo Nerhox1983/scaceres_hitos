@@ -7,7 +7,7 @@
         <label>Nombre:</label>
         </td>
         <td>
-          <input [(ngModel)]="hito.s_nompro" type="text" placeholder="s_nompro" #controlNombreProyecto>
+          <input [(ngModel)]="hito.s_nompro" type="text" placeholder="s_nompro">
         </td>
       </tr>
       <tr>
@@ -47,7 +47,7 @@
         <label>Cumplio:</label>
         </td>
         <td>
-          <input [(ngModel)]="hito.s_cumpli" placeholder="s_cumpli" id="controlCumplio"/>
+          <input [(ngModel)]="hito.s_cumpli" type="checkbox" placeholder="s_cumpli" ng-true-value="A" ng-false-value="Z">
         </td>
       </tr>
       <tr>
