@@ -4,7 +4,7 @@
     <Table>
       <tr>
         <td>
-        <label>Nombre:</label>
+        <label class="label">Nombre:</label>
         </td>
         <td>
           <input [(ngModel)]="hito.s_nompro" type="text" placeholder="s_nompro">
@@ -15,7 +15,7 @@
         <label>Fecha Ingreso:</label>
         </td>
         <td>
-          <input [(ngModel)]="hito.f_fecing" placeholder="f_fecing" id="controlFechaIngreso"/>
+          <input [(ngModel)]="hito.f_fecing" type="date" placeholder="f_fecing" id="controlFechaIngreso"/>
         </td>
       </tr>
       <tr>
@@ -39,7 +39,7 @@
         <label>Fecha Cumplimiento:</label>
         </td>
         <td>
-          <input [(ngModel)]="hito.f_feccum" placeholder="f_feccum" id="controlFechaCumplimiento"/>
+          <input [(ngModel)]="hito.f_feccum" type="date" placeholder="f_feccum" id="controlFechaCumplimiento"/>
         </td>
       </tr>
       <tr>
@@ -60,10 +60,10 @@
       </tr>
       <tr>
         <td>
-          <button (click)="InsertUnHito(controlNombreProyecto)" >Insertar Hito</button>
+          <button (click)="InsertUnHito(controlNombreProyecto)" class="button">Insertar Hito</button>
         </td>
         <td>
-          <button (click)="UpdateUnHito(controlNombreProyecto)" >Actualizar Hito</button>
+          <button (click)="UpdateUnHito()" class="button">Actualizar Hito</button>
         </td>
       </tr>
     </Table>

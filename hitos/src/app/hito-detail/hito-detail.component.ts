@@ -20,13 +20,11 @@ export class HitoDetailComponent implements OnInit
 
   s_nompro: string;
   constructor(private hitoService: HitoService) 
-  {
-    //this.s_nompro = ((document.getElementById("text") as HTMLInputElement).value);    
+  {    
   }
 
   InsertUnHito(item)
   {    
-    //alert(this.hito.s_cumpli);
     const nuevoHito =
     {
       i_hitid: this.hito.i_hitid,        
@@ -47,8 +45,8 @@ export class HitoDetailComponent implements OnInit
 
   UpdateUnHito()
   {
-    alert(this.hito.i_hitid);
-    const hitoAjustado =
+    alert(this.hito.s_cumpli);
+    const nuevoHito =
     {
       i_hitid: this.hito.i_hitid,        
       s_nompro: this.hito.s_nompro,
@@ -59,7 +57,7 @@ export class HitoDetailComponent implements OnInit
       s_cumpli: this.hito.s_cumpli,
       s_obscum: this.hito.s_obscum          
     };
-    this.hitoService.updateUnHito(hitoAjustado)
+    this.hitoService.updateUnHito(nuevoHito)    
     .subscribe((newHito)=>
     {
       console.log(newHito);  

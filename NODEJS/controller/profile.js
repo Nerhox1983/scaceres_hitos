@@ -92,7 +92,7 @@ router.post('/ApiUpdateHito', async (req, res) =>
         .input("i_tipo", sql.Int, req.body.i_tipo)  
         .input("s_descripcion", sql.VarChar(100), req.body.s_descri) 
         .input("f_fechaCumplimiento", sql.DateTime, req.body.f_feccum)
-        .input("s_cumplio", sql.VarChar(1), req.body.s_cumplio)
+        .input("s_cumplio", sql.VarChar(1), req.body.s_cumpli)
         .input("s_observacionesCumplimiento", sql.VarChar(100), req.body.s_obscum)  
         .execute("actualizarHito").then(function (recordSet) 
         {  
