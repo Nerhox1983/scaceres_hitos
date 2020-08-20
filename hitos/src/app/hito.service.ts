@@ -33,5 +33,11 @@ export class HitoService
   {    
     const path = 'http://localhost:5000/ApiGetTipo/${i_tipid}';
       return this.http.get(path);
-  } 
+  }
+  
+  postUnHito(hito: Hito)
+  {    
+    const path = 'http://localhost:5000/ApiInsertHito';
+      return this.http.post(path, hito);
+  }
 }
