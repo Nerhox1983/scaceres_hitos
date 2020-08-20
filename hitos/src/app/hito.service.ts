@@ -43,7 +43,7 @@ export class HitoService
 
   updateUnHito(hito: Hito)
   {    
-    const path = 'http://localhost:5000/ApiUpdateHito/${i_hitid}';
+    const path = 'http://localhost:5000/ApiUpdateHito';
       return this.http.post(path, hito);
   }
 }

@@ -47,6 +47,7 @@ export class HitoDetailComponent implements OnInit
 
   UpdateUnHito()
   {
+    alert(this.hito.i_hitid);
     const hitoAjustado =
     {
       i_hitid: this.hito.i_hitid,        
@@ -58,7 +59,7 @@ export class HitoDetailComponent implements OnInit
       s_cumpli: this.hito.s_cumpli,
       s_obscum: this.hito.s_obscum          
     };
-    this.hitoService.postUnHito(hitoAjustado)
+    this.hitoService.updateUnHito(hitoAjustado)
     .subscribe((newHito)=>
     {
       console.log(newHito);  

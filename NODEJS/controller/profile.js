@@ -86,14 +86,14 @@ router.post('/ApiUpdateHito', async (req, res) =>
         { 
         const pool = await poolPromise  
         const result = await pool.request()  
-        .input("i_hitoId", sql.VarChar(100), req.body.i_hitoId)  
-        .input("s_nombreProyecto", sql.VarChar(100), req.body.s_nombreProyecto)  
-        .input("f_fechaIngreso", sql.DateTime, req.body.f_fechaIngreso)  
+        .input("i_hitoId", sql.VarChar(100), req.body.i_hitid)  
+        .input("s_nombreProyecto", sql.VarChar(100), req.body.s_nompro)  
+        .input("f_fechaIngreso", sql.DateTime, req.body.f_fecing)  
         .input("i_tipo", sql.Int, req.body.i_tipo)  
-        .input("s_descripcion", sql.VarChar(100), req.body.s_descripcion) 
-        .input("f_fechaCumplimiento", sql.DateTime, req.body.f_fechaCumplimiento)
+        .input("s_descripcion", sql.VarChar(100), req.body.s_descri) 
+        .input("f_fechaCumplimiento", sql.DateTime, req.body.f_feccum)
         .input("s_cumplio", sql.VarChar(1), req.body.s_cumplio)
-        .input("s_observacionesCumplimiento", sql.VarChar(100), req.body.s_observacionesCumplimiento)  
+        .input("s_observacionesCumplimiento", sql.VarChar(100), req.body.s_obscum)  
         .execute("actualizarHito").then(function (recordSet) 
         {  
             res.status(200).json({ status: "Success" })  
