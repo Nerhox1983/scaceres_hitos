@@ -25,20 +25,8 @@ export class HitoDetailComponent implements OnInit
   }
 
   InsertUnHito(item)
-  {
-    /*alert(this.hito.s_nompro);*/
-    alert(this.hito.s_cumpli);
-    /*const abc =
-    {
-      i_hitid: 1,        
-      s_nompro: 'SER',
-      f_fecing: new Date(),
-      i_tipo: 1,
-      s_descri: 'test_12',
-      f_feccum: new Date(),
-      s_cumpli: 'N',
-      s_obscum: 'prueba2020sep19'          
-    };*/
+  {    
+    //alert(this.hito.s_cumpli);
     const nuevoHito =
     {
       i_hitid: this.hito.i_hitid,        
@@ -51,6 +39,26 @@ export class HitoDetailComponent implements OnInit
       s_obscum: this.hito.s_obscum          
     };
     this.hitoService.postUnHito(nuevoHito)
+    .subscribe((newHito)=>
+    {
+      console.log(newHito);  
+    });
+  }
+
+  UpdateUnHito()
+  {
+    const hitoAjustado =
+    {
+      i_hitid: this.hito.i_hitid,        
+      s_nompro: this.hito.s_nompro,
+      f_fecing: this.hito.f_fecing,
+      i_tipo: this.hito.i_tipo,
+      s_descri: this.hito.s_descri,
+      f_feccum: this.hito.f_feccum,
+      s_cumpli: this.hito.s_cumpli,
+      s_obscum: this.hito.s_obscum          
+    };
+    this.hitoService.postUnHito(hitoAjustado)
     .subscribe((newHito)=>
     {
       console.log(newHito);  

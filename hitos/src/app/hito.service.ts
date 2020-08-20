@@ -40,4 +40,10 @@ export class HitoService
     const path = 'http://localhost:5000/ApiInsertHito';
       return this.http.post(path, hito);
   }
+
+  updateUnHito(hito: Hito)
+  {    
+    const path = 'http://localhost:5000/ApiUpdateHito';
+      return this.http.post(path, hito);
+  }
 }
