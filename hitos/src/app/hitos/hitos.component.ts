@@ -24,7 +24,7 @@ export class HitosComponent implements OnInit
       this.hitos = data;
       console.log(data)
     })
-    console.log(this.hitos);
+    console.log("hitos: " + this.hitos);
 
     hitoService.getTodosTipos().subscribe((dataTipos:any)=>
     {
@@ -32,15 +32,16 @@ export class HitosComponent implements OnInit
       this.tipos = dataTipos;
       console.log(dataTipos)
     })
-    console.log(this.tipos);
+    console.log("tipos: " + this.tipos);
   }  
 
   ngOnInit() 
   {    
   }
 
-  onSelect (hito: Hito): void 
+  onSelect (hito: Hito, tipo:Tipo): void 
   {
     this.selectedHito = hito;
+    this.selectedTipo = tipo;
   }
 }
